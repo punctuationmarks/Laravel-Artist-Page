@@ -22,6 +22,7 @@
 <body>
 
     <a class="text-center sr-only sr-only-focusable" href="{{ route('arts')}}">Skip to arts</a>
+    <!-- these two navbars shown on small vs large screens through media queries -->
     <a class="text-center sr-only sr-only-focusable" href="#navbar-toggle">Skip to navigation</a>
     <a class="text-center sr-only sr-only-focusable" href="#footer-toggle">Skip to navigation</a>
     <a class="text-center sr-only sr-only-focusable" href="{{ route('contact')}}">Skip to contact</a>
@@ -32,16 +33,16 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
                         <h4 class="text-gray">About</h4>
-                        <p class="text-gray">
+                        <p class="text-gray lead">
                             I'm Jack Georgopuls and I make art.
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-gray">Contact</h4>
-                        <ul class="list-inline contact-list">
-                            <li class="list-inline-item"><a href="https://www.snapchat.com/add/georgopulos" target="_blank" class="text-gray"><i class="fab fa-snapchat-square"></i></a></li>
-                            <li class="list-inline-item"><a href="https://soundcloud.com/user-271744266" target="_blank" class="text-gray"><i class="fab fa-soundcloud"></i></a></li>
-                            <li class="list-inline-item"><a href="https://www.instagram.com/jack_georgopulos/" target="_blank" class="text-gray"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="{{ route('contact') }}" class="text-gray"><i class="far fa-envelope"></i></a></li>
+                        <ul class="list-inline">
+                            <li class="p-2 list-inline-item"><a href="https://www.snapchat.com/add/georgopulos" target="_blank" class="text-gray lead"><i class="fab fa-snapchat-square"></i></a></li>
+                            <li class="p-2 list-inline-item"><a href="https://soundcloud.com/user-271744266" target="_blank" class="text-gray lead"><i class="fab fa-soundcloud"></i></a></li>
+                            <li class="p-2 list-inline-item"><a href="https://www.instagram.com/jack_georgopulos/" target="_blank" class="text-gray lead"><i class="fab fa-instagram"></i></a></li>
+                            <li class="p-2 list-inline-item"><a href="{{ route('contact') }}" class="text-gray lead"><i class="far fa-envelope"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -100,14 +101,16 @@
             </button>
         </div>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link text-gray" href="https://www.snapchat.com/add/georgopulos" target="_blank"><i class="fab fa-snapchat-square"></i></a>
-                <a class="nav-item nav-link text-gray" href="https://soundcloud.com/user-271744266" target="_blank"><i class="fab fa-soundcloud"></i></a>
-                <a class="nav-item nav-link text-gray" href="https://www.instagram.com/jack_georgopulos/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a class="nav-item nav-link text-gray" href="{{ route('contact') }}"><i class="far fa-envelope"></i></a>
-            </div>
+            <ul class="p-1 list-inline">
+                <li class="p-2 list-inline-item"><a href="https://www.snapchat.com/add/georgopulos" target="_blank" class="lead text-gray"><i class="fab fa-snapchat-square"></i></a></li>
+                <li class="p-2 list-inline-item"><a href="https://soundcloud.com/user-271744266" target="_blank" class="lead text-gray"><i class="fab fa-soundcloud"></i></a></li>
+                <li class="p-2 list-inline-item"><a href="https://www.instagram.com/jack_georgopulos/" target="_blank" class="lead text-gray"><i class="fab fa-instagram"></i></a></li>
+                <li class="p-2 list-inline-item"><a href="{{ route('contact') }}" class="lead text-gray"><i class="far fa-envelope"></i></a></li>
+            </ul>
         </div>
     </nav>
+
+
     <!-- Font Awesome  -->
     <script src="https://kit.fontawesome.com/03ec9c2be2.js" crossorigin="anonymous"></script>
 

@@ -32,7 +32,7 @@ class ContactMail extends Mailable
     {
         return $this->subject('New inquiry from art website')
             ->from($this->email->email, $this->email->name)
-            ->to("punctuationmarks@protonmail.com")
+            ->to("jack_georgopulos2@aol.com")
             // ->content($this->email->content)
             ->view('email.contactmail');
     }

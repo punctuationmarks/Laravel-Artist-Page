@@ -12,6 +12,15 @@
                 <span class="text-justify">
                     {{ $art->body }}
                 </span>
+
+                @auth
+                <div class="container m-2 pt-2">
+
+                    <a class="btn btn-primary btn-lg" href="/arts/{{ $art->id }}/edit" role="button">Edit</a>
+                    <a class="btn btn-danger btn-lg" href="/arts/{{ $art->id }}/destroytodeath" role="button">Destroy this and start over</a>
+
+                </div>
+                @endauth
             </div>
         </div>
     </div>

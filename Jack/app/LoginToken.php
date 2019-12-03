@@ -41,7 +41,9 @@ class LoginToken extends Model
         // Mail::send
         
         Mail::raw(
-            "<a href='{$url}'> Login by clicking here</a>", // body of email
+             // body of email
+            "Check this, just copy and paste this into the browser that you want to be logged into. But note, you will need cookies active and will need to re-login once your reset your cookies (which you should do every once in a while anyways, because fuck the bots.
+            {$url}",
             function ($message) {
                 $message->to($this->user->email)
                     ->subject('Login into site');

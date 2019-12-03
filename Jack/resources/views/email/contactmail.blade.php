@@ -12,7 +12,7 @@
         list-style-type: none;
     }
 
-    li{
+    li {
         padding: 1em;
     }
 
@@ -28,7 +28,6 @@
     </h1>
 
     <ul>
-
         <li>Name: {{$email->name}}</li>
         <li>Email: {{$email->email}}</li>
         <li>Message: </li>

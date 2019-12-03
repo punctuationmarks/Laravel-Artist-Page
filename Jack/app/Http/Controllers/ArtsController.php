@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use App\Art;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Input;
-
-// use Illuminate\Support\Facades\Storage;
 
 class ArtsController extends Controller
 {
@@ -15,7 +12,7 @@ class ArtsController extends Controller
     // rendering a list of all table's objects
     public function index()
     {
-        // returning only the most 3 recent on home page
+        // returning the art pieces by time uploaded
         $arts = Art::latest()->get();
         return view(
             'arts.index',
@@ -38,13 +35,12 @@ class ArtsController extends Controller
     public function create()
     {
         return view("arts.create");
-    }    //
+    }    
 
     public function store(Request $request)
     {
         request()->validate([
             'title' => 'min:3|max:255',
-            'body' => 'min:3|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -56,7 +52,7 @@ class ArtsController extends Controller
         if ($request->has('body')) {
             $art->body = $request->get('body');
         }
-        
+
         // image processing
         $request->file('image');
         $file = $request->file('image');
@@ -74,8 +70,9 @@ class ArtsController extends Controller
     }
 
     // edits an existing object
-    public function edit(Art $art)
+    public function edit($id)
     {
+        $art = Art::find($id);
 
         return view('arts.edit', compact('art'));
     }
@@ -85,16 +82,28 @@ class ArtsController extends Controller
         // inlining the returned validated attributes, but now updating not creating
         $art->update(request()->validate([
             'title' => 'min:3|max:255',
-            'body' => 'min:3|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]));
 
-        redirect($art->path());
+        return redirect('/arts');
     }
 
+    public function confirmDestroy($id)
+    {
+
+        $art = Art::find($id);
+
+        return view('arts.destroy', compact('art'));
+    }
     // deletes an observation
-    public function destroy()
-    { }
+    public function destroy($id)
+    { 
+        $art = Art::find($id);
+        
+        $art->delete();
+
+        return redirect('/arts');
+    }
 
 
 

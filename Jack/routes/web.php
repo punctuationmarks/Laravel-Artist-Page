@@ -44,6 +44,12 @@ Route::get('/arts/{art}', 'ArtsController@show')
 Route::get('/arts/{art}/edit', 'ArtsController@edit')
     ->name('arts.edit')
     ->middleware('auth');
+Route::get('/arts/{art}/destroytodeath', 'ArtsController@confirmDestroy')
+    ->name('arts.confirmDestroy')
+    ->middleware('auth');
+Route::delete('/arts/{art}/destroytodeath', 'ArtsController@destroy')
+    ->name('arts.destroy')
+    ->middleware('auth');
 Route::put('/arts/{art}', 'ArtsController@update')
     ->name('arts.update')
     ->middleware('auth');

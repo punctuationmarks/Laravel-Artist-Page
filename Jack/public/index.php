@@ -57,12 +57,12 @@ $response = $kernel->handle(
 
 // $response->send();
 
-// for AWS deploy::
-if (DB::connection()->getDatabaseName()) {
-    echo "Connected to database " . DB::connection()->getDatabaseName();
-}
+// // for AWS deploy::
+// if (DB::connection()->getDatabaseName()) {
+//     echo "Connected to database " . DB::connection()->getDatabaseName();
+// }
 
-// DB::connection()->getDatabaseName();
+DB::connection()->getDatabaseName();
 
 $response->send();
 

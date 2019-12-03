@@ -3,76 +3,13 @@
 
 @section('content')
 
-<div class="container m1 p1">
+<section class="container p-2 pb-5 mb-5">
+    <h1>Edit</h1>
+    {{ Form::model($art, ['method' => 'PUT', 'route' => ['arts.update', $art->id], 'files' => true]) }}
 
-    <h1>Update</h1>
+    @include('arts/art_form', ['buttonText' => 'Update'])
 
+    {{ Form::close() }}
 
-    <small class="p-2 m-2">Created: {{ $art->created_at }} || Updated: {{ $art -> updated_at }}</small>
-
-</div>
-
-<form method="POST" action="/arts/{{ $art->id}}">
-    @csrf
-    @method('PUT')
-    <div class="form-group">
-        <label for="title" class="label">
-            Title
-        </label>
-        <div class="control">
-            <input type="text" class="input {{ $errors->has('title') ? 'danger' : ''}}" name="title" id="title" value="{{ old('title') }}">
-
-            @if($errors->has('title'))
-            <p class="danger">{{ $errors->first('title') }}</p>
-            @endif
-
-        </div>
-    </div>
-
-
-    <div class="form-group">
-
-        <label for="body" class="label">
-            Body
-        </label>
-
-        <div class="control">
-            <textarea class="textarea @error('body') danger @enderror" name="body" id="body">
-
-            {{ old('body') }}
-
-            </textarea>
-            @error('body')
-            <p class="danger"> {{ $errors->first('body') }}</p>
-            @enderror
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="image" class="label">
-                Image
-            </label>
-
-            <div class="control">
-                <input type="file" class="" id="image" name="image" data-buttonText="Browse">
-
-                {{ old('image') }}
-
-                @error('image')
-                <p class="danger"> {{ $errors->first('image') }}</p>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="control">
-                <button class="button is-link" type="submit">Submit</button>
-            </div>
-        </div>
-
-</form>
-
-
-
+</section>
 @endsection('content')

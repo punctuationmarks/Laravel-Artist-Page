@@ -15,10 +15,10 @@ class CreateLoginTokensTable extends Migration
     {
         Schema::create('login_tokens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            // $table->integer('user_id')->index();
+            // tieing the token to the correct user
             $table->integer('user_id')->unqiue();
+            // storing the token generated for login
             $table->string('token', 40)->index();
-            // $table->string('something')->virtualAs("asdfs");
             $table->timestamps();
         });
     }
