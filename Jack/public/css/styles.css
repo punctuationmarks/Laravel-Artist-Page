@@ -1,0 +1,87 @@
+html {
+    --black: rgb(8, 34, 41);
+    --transluscent-gray: rgba(175, 166, 166, 0.3);
+    --gray: rgb(175, 166, 166);
+}
+
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: -1.2px;
+    background: var(--transluscent-gray);
+    font-weight: 200;
+}
+
+.light-background {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.sr-only-focusable {
+    color: var(--black);
+}
+
+.text-gray {
+    color: var(--gray) !important;
+}
+
+.contact-list {
+    font-size: larger;
+}
+
+.navbar-brand {
+    letter-spacing: -1.5px;
+}
+
+
+/* needs the !important due to how bootstrap handles their end :/  */
+
+.bg-dark {
+    background-color: var(--black) !important;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.welcome-page-button {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (max-width: 576px) {
+    header#header-navbar-lg {
+        display: none;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+
+@media (max-width: 768px) {
+    header#header-navbar-lg {
+        display: none;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 768px) {
+    header#header-navbar-sm {
+        display: none;
+    }
+    #footer-navbar {
+        display: none;
+    }
+}
