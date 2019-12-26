@@ -4,7 +4,7 @@
 @section('content')
 
 
-<h1 class="font-weight-light text-center mt-4 mb-0">Lorem Ipsum</h1>
+<h1 class="font-weight-light text-center mt-4 mb-0"></h1>
 <hr class="mt-2 mb-5">
 
 @auth
