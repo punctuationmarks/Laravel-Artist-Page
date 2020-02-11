@@ -1,5 +1,7 @@
-# Testing PHP, Laravel and MySQL deployment on AWS's Elastic Beanstalk
+# PHP, Laravel and MySQL deployment on AWS's Elastic Beanstalk
+_for production_
 
-- Beta site [here](http://jackgeorgopolus.com)  deployed through AWS's Elastic beanstalk
+- Testing site [here](https://jack-georgopolus.herokuapp.com/)  deployed on Heroku
+
 
 
