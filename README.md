@@ -6,7 +6,7 @@ Straight forward site for an artist to show current and up-to-date photos
 and commnetary on their work. CRUD app with passwordless sign in feature 
 for ease of use and to avoid security issues
 
-- Testing site [here](https://jack-georgopolus.herokuapp.com/)  deployed on Heroku
+- Testing site [here](http://jack-georgopolus.herokuapp.com/)  deployed on Heroku
 
 
 
